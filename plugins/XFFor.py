@@ -34,7 +34,7 @@ class XFFor(Plugin):
 
     def serverHeaders(self, response, request):
         '''Handles all response headers'''
-        print response.headers['Remote Address'], response.headers['X-Forwarded-For']
+        print response.headers.get('Remote Address'), response.headers.get('X-Forwarded-For')
 
     def clientRequest(self, request):
         '''Handles outgoing request'''
